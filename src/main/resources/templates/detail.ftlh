@@ -3,36 +3,27 @@
 <html lang="cs">
 <head>
     [#include "_common/head.ftlh"]
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 </head>
 <body>
-<div class="detail">
-    <div class="vizitka">
-        <div class="jmeno">${vizitka.jmeno}</div>
-        <div class="firma">${vizitka.firma}</div>
-        <div class="udaje">
-            <div class="adresa">
-                <div>${vizitka.ulice}</div>
-                <div><span>${vizitka.obecPsc}</span></div>
-            </div>
-            <div class="kontakty">
-                [#if vizitka.email??]
-                <div><i class="bi bi-at"></i>${vizitka.email}</div>
-                [/#if]
-                [#if vizitka.telefon??]
-                <div><i class="bi bi-phone"></i>${vizitka.telefon}</div>
-                [/#if]
-                <div><i class="bi bi-globe"></i>${vizitka.web}</div>
-            </div>
-        </div>
-    </div>
+<form class="detail" method="post" action="/delete">
+    <input type="hidden" name="id" value="${id}"/>
+    [#include "_common/classVizitka.ftlh"]
 
     <div class="mapa">
-        <iframe style="border:none" src="https://frame.mapy.cz/?q=${vizitka.celaAdresa?url}" width="100%" height="100%" frameborder="0"></iframe>
+        <iframe style="border:none" src="https://frame.mapy.cz/?q=${vizitka.celaAdresa?url}" width="100%" height="100%"
+                frameborder="0"></iframe>
     </div>
+
+    <div class="col-md-1">
+        <button type="submit" class="btn btn-success">Smazat</button>
+    </div>
+
 
     <nav>
         <a href="/">◂ zpět na seznam</a>
     </nav>
-</div>
+</form>
 </body>
 </html>

@@ -3,10 +3,12 @@
 <html lang="cs">
 <head>
     [#include "_common/head.ftlh"]
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 </head>
 <body>
 
-<form class="row g-3" method="post" action="/">
+<form class="mb-3 text-bg-dark p-3" method="post" action="/">
     <div class="col-md-3">
         <label for="jmeno" class="form-label">Jméno</label>
         <input id="jmeno" name="jmeno" class="form-control" type="text"/>
@@ -36,9 +38,8 @@
         <input id="web" name="web" class="form-control" type="text"/>
     </div>
 
-    <div class="col-md-1 align-self-end">
-        <button type="submit" class="btn btn-primary"><i class="bi bi-vizitka-plus-fill" role="img"
-                                                         aria-label="Append"></i></button>
+    <div class="py-4 col-md-1 align-self-end">
+        <button type="submit" class="btn btn-primary">Přidat</button>
     </div>
 </form>
 </body>

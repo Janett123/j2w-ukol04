@@ -91,7 +91,9 @@ public class VizitkaService {
         seznamVizitek.add(vizitka);
     }
 
+
     public void deleteById(int id) {
         seznamVizitek.remove(id);
     }
+
 }
